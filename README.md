@@ -1,2 +1,2 @@
 # OnSale
-SalesApp
+Proyecto de una aplicación de ventas
