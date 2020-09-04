@@ -9,16 +9,16 @@
 <div>
     <h4>Country</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
+    <dl class="row">
+        <dt class="col-sm-1">
+            @Html.DisplayNameFor(model => model.Name):
         </dt>
-        <dd>
+        <dd class="col-sm-11">
             @Html.DisplayFor(model => model.Name)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Edit</a>
-    <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+    </div>
 </div>

@@ -68,7 +68,7 @@ namespace OnSale.Web.Controllers
                 {
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "There are a record with the same name.");
+                        ModelState.AddModelError(string.Empty, "This country already exist.");
                     }
                     else
                     {
@@ -122,7 +122,7 @@ namespace OnSale.Web.Controllers
                 {
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "There are already a record with the same name.");
+                        ModelState.AddModelError(string.Empty, "This country already exist.");
                     }
                     else
                     {
@@ -133,7 +133,7 @@ namespace OnSale.Web.Controllers
                 {
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
             }
             return View(country);
         }
