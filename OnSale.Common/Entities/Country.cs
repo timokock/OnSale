@@ -14,7 +14,7 @@ namespace OnSale.Common.Entities
 
         public ICollection<Department> Departments { get; set; }
 
-        [DisplayName("Departments Number")]
+        [DisplayName("Provinces")]
         public int DepartmentsNumber => Departments == null ? 0 : Departments.Count;
 
     }

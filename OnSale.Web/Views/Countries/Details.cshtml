@@ -10,11 +10,17 @@
     <h4>Country</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-1">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name):
         </dt>
-        <dd class="col-sm-11">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartmentsNumber):
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentsNumber)
         </dd>
     </dl>
     <div>
@@ -30,7 +36,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Departments</h3>
+                <h3 class="panel-title">Provinces</h3>
             </div>
             <div class="panel-body">
                 <table class="table table-hover table-responsive table-striped" id="MyTable">

@@ -16,7 +16,7 @@ namespace OnSale.Common.Entities
 
         public ICollection<City> Cities { get; set; }
 
-        [DisplayName("Cities Number")]
+        [DisplayName("Cities")]
         public int CitiesNumber => Cities == null ? 0 : Cities.Count;
 
         [JsonIgnore]
