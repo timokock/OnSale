@@ -19,7 +19,7 @@
     </dl>
     <div>
         <a asp-action="AddDepartment" asp-route-id="@Model.Id" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-plus"></i> Department</a>
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-warning">Edit</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
         <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
     </div>
 
@@ -56,9 +56,9 @@
                                     @Html.DisplayFor(modelItem => item.CitiesNumber)
                                 </td>
                                 <td>
-                                    <a asp-action="EditDepartment" asp-route-id="@item.Id" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
-                                    <a asp-action="DetailsDepartment" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-align-justify"></i></a>
-                                    <button data-id="@item.Id" class="btn btn-sm btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
+                                    <a asp-action="EditDepartment" asp-route-id="@item.Id" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                                    <a asp-action="DetailsDepartment" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-menu-hamburger"></i> Details</a>
+                                    <button data-id="@item.Id" class="btn btn-sm btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i> Delete</button>
                                 </td>
                             </tr>
                         }

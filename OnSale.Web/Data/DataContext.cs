@@ -15,6 +15,13 @@ namespace OnSale.Web.Data
 
         public DbSet<Department> Departments { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductImage> ProductImages { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -22,6 +29,9 @@ namespace OnSale.Web.Data
             modelBuilder.Entity<City>().HasIndex(t => t.Name).IsUnique();
             modelBuilder.Entity<Country>().HasIndex(t => t.Name).IsUnique();
             modelBuilder.Entity<Department>().HasIndex(t => t.Name).IsUnique();
+            modelBuilder.Entity<Category>().HasIndex(t => t.Name).IsUnique();
+            modelBuilder.Entity<Product>().HasIndex(t => t.Name).IsUnique();
+
         }
     }
 }
