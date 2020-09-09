@@ -15,8 +15,8 @@
             <input type="hidden" asp-for="Id" />
             <partial name="_Country" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-sm btn-primary" />
-                <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+                <button type="submit" class="btn btn-sm btn-primary"><span><i class="glyphicon glyphicon-ok"></i></span> Save</button>
+                <a asp-action="Index" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
             </div>
         </form>
     </div>

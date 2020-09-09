@@ -138,9 +138,8 @@ namespace OnSale.Web.Controllers
                 {
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
-                //return RedirectToAction(nameof(Index));
             }
-            return View(country);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Countries/Delete/5
