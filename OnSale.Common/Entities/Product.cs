@@ -29,13 +29,13 @@ namespace OnSale.Common.Entities
 
         public ICollection<ProductImage> ProductImages { get; set; }
 
-        [DisplayName("Product Images Number")]
+        [DisplayName("Product Images")]
         public int ProductImagesNumber => ProductImages == null ? 0 : ProductImages.Count;
 
         //TODO: Pending to put the correct paths
         [Display(Name = "Image")]
         public string ImageFullPath => ProductImages == null || ProductImages.Count == 0
-            ? $"https://localhost:44390/images/noimage.png"
+            ? $"https://localhost:44324/images/noimage.png"
             : ProductImages.FirstOrDefault().ImageFullPath;
     }
 }
