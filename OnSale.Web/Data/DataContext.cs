@@ -23,6 +23,10 @@ namespace OnSale.Web.Data
 
         public DbSet<ProductImage> ProductImages { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
