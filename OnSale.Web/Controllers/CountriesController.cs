@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OnSale.Common.Entities;
 using OnSale.Web.Data;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace OnSale.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CountriesController : Controller
     {
         private readonly DataContext _context;
@@ -35,11 +35,11 @@ namespace OnSale.Web.Controllers
                 return NotFound();
             }
 
-            var country = await _context.Countries
+            Country country = await _context.Countries
                 .Include(c => c.Departments)
                 .ThenInclude(d => d.Cities)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            
+
             if (country == null)
             {
                 return NotFound();
@@ -96,7 +96,7 @@ namespace OnSale.Web.Controllers
                 return NotFound();
             }
 
-            var country = await _context.Countries.FindAsync(id);
+            Country country = await _context.Countries.FindAsync(id);
             if (country == null)
             {
                 return NotFound();
@@ -150,7 +150,7 @@ namespace OnSale.Web.Controllers
                 return NotFound();
             }
 
-            var country = await _context.Countries
+            Country country = await _context.Countries
                 .Include(c => c.Departments)
                 .ThenInclude(d => d.Cities)
                 .FirstOrDefaultAsync(m => m.Id == id);
