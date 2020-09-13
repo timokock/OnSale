@@ -30,6 +30,12 @@ namespace OnSale.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/NotAuthorized";
+                options.AccessDeniedPath = "/Account/NotAuthorized";
+            });
 
             services.AddIdentity<User, IdentityRole>(cfg =>
             {
@@ -64,6 +70,7 @@ namespace OnSale.Web
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -75,7 +82,7 @@ namespace OnSale.Web
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+            app.UseStatusCodePagesWithReExecute("/error/{0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
